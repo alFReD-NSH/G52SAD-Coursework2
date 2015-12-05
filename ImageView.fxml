@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.control.*?>
@@ -7,18 +8,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="216.0" prefWidth="246.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ImageViewDemoController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ImageViewController">
   <children>
-    <ImageView fx:id="myImage" fitHeight="150.0" fitWidth="200.0" layoutX="24.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="myImage" fitHeight="476.0" fitWidth="773.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
       <image>
-        <Image url="@Dog.jpg" />
+        <Image url="@cat.jpg" />
       </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
     </ImageView>
-    <RadioButton fx:id="dogRadioButton" layoutX="73.0" layoutY="184.0" mnemonicParsing="false" onAction="#dogRadioButtonListener" selected="true" text="Dog">
-      <toggleGroup>
-        <ToggleGroup fx:id="myToggleGroup" />
-      </toggleGroup>
-    </RadioButton>
-    <RadioButton fx:id="catRadioButton" layoutX="131.0" layoutY="184.0" mnemonicParsing="false" onAction="#catRadioButtonListener" text="Cat" toggleGroup="$myToggleGroup" />
   </children>
 </AnchorPane>

@@ -10,7 +10,7 @@ public class ImageView extends Application
    {  
       // Load the FXML file.
       Parent parent = FXMLLoader.load(
-               getClass().getResource("ImageViewDemo.fxml")); 
+               getClass().getResource("ImageView.fxml"));
       
       // Build the scene graph.
       Scene scene = new Scene(parent); 
