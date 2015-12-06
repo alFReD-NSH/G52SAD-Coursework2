@@ -8,15 +8,23 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ImageViewController">
-  <children>
-    <ImageView fx:id="myImage" fitHeight="476.0" fitWidth="773.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-        <Image url="@cat.jpg" />
-      </image>
-         <viewport>
-            <Rectangle2D />
-         </viewport>
-    </ImageView>
-  </children>
-</AnchorPane>
+<BorderPane prefHeight="600.0" prefWidth="800.0" stylesheets="@ImageView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ImageViewController">
+    <center>
+        <ImageView fx:id="myImage" fitHeight="476.0" fitWidth="773.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@cat.jpg" />
+            </image>
+            <viewport>
+                <Rectangle2D />
+            </viewport>
+        </ImageView>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER">
+            <children>
+                <Button text="&lt;" />
+                <Button text="&gt;" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
