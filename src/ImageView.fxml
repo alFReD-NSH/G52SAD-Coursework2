@@ -10,7 +10,8 @@
 
 <BorderPane prefHeight="600.0" prefWidth="800.0" stylesheets="@ImageView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ImageViewController">
     <center>
-        <ImageView fx:id="myImage" fitHeight="476.0" fitWidth="773.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="mainImage" fitHeight="476.0" fitWidth="773.0" layoutX="92.0"
+                   layoutY="32.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@cat.jpg" />
             </image>
@@ -22,8 +23,9 @@
     <bottom>
         <HBox alignment="CENTER">
             <children>
-                <Button text="&lt;" />
-                <Button text="&gt;" />
+                <Button fx:id="previousButton" onAction="#previousButtonListener"
+                        text="&lt;" />
+                <Button fx:id="nextButton" onAction="#nextButtonListener" text="&gt;" />
             </children>
         </HBox>
     </bottom>

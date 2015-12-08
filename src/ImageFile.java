@@ -7,4 +7,7 @@ public class ImageFile extends File {
     public ImageFile(String path) {
         super(path);
     }
+    public ImageFile(File file) {
+        this(file.getAbsolutePath());
+    }
 }

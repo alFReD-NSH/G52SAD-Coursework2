@@ -7,11 +7,19 @@ public class FolderAlbum extends File {
 
     public FolderAlbum(String path) {
         super(path);
-        String[] imagePaths = list(ImageFilter.getInstance());
-        for (String p : imagePaths) {
-            images.add(new ImageFile(path + "/" + p));
-        }
+        addImagesFromDirectory(this);
         currentImage = images.get(0);
+    }
+
+    private void addImagesFromDirectory(File dir) {
+        File[] files = dir.listFiles();
+        for (File file : files) {
+            if (file.isDirectory()) {
+                addImagesFromDirectory(file);
+            } else if (ImageFilter.getInstance().accept(dir, file.getName())){
+                images.add(new ImageFile(file.getPath()));
+            }
+        }
     }
 
     public void next() {

@@ -8,9 +8,9 @@ public class ImageFilterTest {
     @Test
     public void testAccept() throws Exception {
         File parent = new File(".");
-        assertEquals(instance.accept(parent,"asdasd.something"), false);
-        assertEquals(instance.accept(parent,"asdasd.jpg"), true);
-        assertEquals(instance.accept(parent,"asdasd.jPg"), true);
+        assertEquals(instance.accept(parent,"a.something"), false);
+        assertEquals(instance.accept(parent,"a.jpg"), true);
+        assertEquals(instance.accept(parent,"a.jPg"), true);
         assertEquals(instance.accept(parent,"jPg"), false);
     }
 }

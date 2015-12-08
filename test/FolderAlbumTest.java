@@ -1,4 +1,3 @@
-import org.junit.runners.Parameterized;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
@@ -33,7 +32,13 @@ public class FolderAlbumTest {
         testGetCurrentImage(folderAlbumTwo, "two/a");
     }
 
+    @Test
+    public void testMulti() throws Exception {
+        FolderAlbum folderAlbumMulti = new FolderAlbum(getResourcePath("multi"));
+        assertEquals(folderAlbumMulti.getImages().size(), 2);
+    }
+
     private String getResourcePath(String p) {
-       return getClass().getResource("/resources/" + p).getPath();
+       return getClass().getResource(p).getPath();
     }
 }
