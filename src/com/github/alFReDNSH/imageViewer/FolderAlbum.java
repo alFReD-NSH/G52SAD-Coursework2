@@ -1,5 +1,6 @@
 package com.github.alFReDNSH.imageViewer;
 
+import javax.sound.midi.SysexMessage;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -57,7 +58,7 @@ public class FolderAlbum extends File {
 
     public void setCurrentImage(String currentImage) {
         for (ImageFile image : images) {
-            if (image.getName() == currentImage) {
+            if (image.getName().equals(currentImage)) {
                 this.currentImage = image;
             }
         }
