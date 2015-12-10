@@ -32,4 +32,56 @@
          </BorderPane.margin>
         </HBox>
     </bottom>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                <MenuItem mnemonicParsing="false" text="Add Image" onAction="#addButtonListener">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="I" control="DOWN" meta="UP"
+                                            shift="UP" shortcut="UP"/>
+                    </accelerator>
+                </MenuItem>
+              <MenuItem mnemonicParsing="false" text="Close" onAction="#quit">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP"
+                                            shift="UP" shortcut="UP"/>
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Image">
+              <items>
+                  <MenuItem mnemonicParsing="false" text="Previous" onAction="#previousButtonListener">
+                      <accelerator>
+                          <KeyCodeCombination alt="UP" code="LEFT" control="UP"
+                                              meta="UP"
+                                              shift="UP" shortcut="UP"/>
+                      </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Next" onAction="#nextButtonListener">
+                      <accelerator>
+                          <KeyCodeCombination alt="UP" code="RIGHT" control="UP"
+                                              meta="UP"
+                                              shift="UP" shortcut="UP"/>
+                      </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Remove Image from album"
+                            onAction="#removeButtonListener">
+                      <accelerator>
+                          <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP"
+                                              shift="UP" shortcut="UP"/>
+                      </accelerator>
+                  </MenuItem>
+              </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" onAction="#showAbout" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
 </BorderPane>

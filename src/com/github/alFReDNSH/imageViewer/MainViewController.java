@@ -89,4 +89,16 @@ public class MainViewController
         mainImage.setImage(new Image("File:" + mainAlbum.getCurrentImage()
                 .getAbsolutePath()));
     }
+
+    public void quit() {
+        System.exit(0);
+    }
+
+    public void showAbout() {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("About");
+        alert.setHeaderText("This was developed by Farid Nouri Neshat.");
+        alert.setContentText("Version 0.1");
+        alert.show();
+    }
 }
