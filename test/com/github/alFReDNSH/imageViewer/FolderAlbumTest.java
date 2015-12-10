@@ -1,3 +1,5 @@
+package com.github.alFReDNSH.imageViewer;
+
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
@@ -39,6 +41,6 @@ public class FolderAlbumTest {
     }
 
     private String getResourcePath(String p) {
-       return getClass().getResource(p).getPath();
+       return getClass().getResource("resources/" + p).getPath();
     }
 }

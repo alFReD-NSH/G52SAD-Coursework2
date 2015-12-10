@@ -1,3 +1,5 @@
+package com.github.alFReDNSH.imageViewer;
+
 import java.io.File;
 import java.io.FilenameFilter;
 

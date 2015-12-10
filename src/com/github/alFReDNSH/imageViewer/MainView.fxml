@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" stylesheets="@ImageView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ImageViewController">
+<BorderPane prefHeight="600.0" prefWidth="800.0" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.alFReDNSH.imageViewer.MainViewController">
     <center>
         <ImageView fx:id="mainImage" fitHeight="476.0" fitWidth="773.0" layoutX="92.0"
                    layoutY="32.0" pickOnBounds="true" preserveRatio="true">
@@ -23,9 +23,9 @@
     <bottom>
         <HBox alignment="CENTER">
             <children>
-                <Button fx:id="previousButton" onAction="#previousButtonListener"
-                        text="&lt;" />
-                <Button fx:id="nextButton" onAction="#nextButtonListener" text="&gt;" />
+                <Button onAction="#previousButtonListener" text="&lt;" />
+                <Button onAction="#nextButtonListener" text="&gt;" />
+                <Button text="+ Add Image to Album" onAction="#addButtonListener"/>
             </children>
         </HBox>
     </bottom>

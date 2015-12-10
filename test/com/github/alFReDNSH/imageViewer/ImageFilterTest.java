@@ -1,3 +1,6 @@
+package com.github.alFReDNSH.imageViewer;
+
+import com.github.alFReDNSH.imageViewer.ImageFilter;
 import org.testng.annotations.Test;
 import java.io.File;
 import static org.testng.Assert.*;
