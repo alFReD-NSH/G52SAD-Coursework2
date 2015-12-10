@@ -1,0 +1,15 @@
+FolderAlbum: Represents an album, contains ImageFile classes and manages the
+interactions with albums
+
+ImageFile: Represents an image File. Manages interactions with images.
+
+ImageFilter: To be used when we need to filter which files are supported images
+
+ImageViewPane: Imported library for resizing the image according to the window size.
+
+Main: initially ImageView. Changed the name because it conflicts with the Javafx class.
+ it contains the main function and loads the mainView css, fxml and controller files.
+
+Util: Misc functions that can be used across classes
+
+Conflict dialog: Will be shown when there's a conflict on adding images.
