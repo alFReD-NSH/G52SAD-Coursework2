@@ -8,16 +8,26 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
+<?import com.github.alFReDNSH.imageViewer.ImageViewPane?>
 
 <BorderPane prefHeight="600.0" prefWidth="800.0" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.alFReDNSH.imageViewer.MainViewController">
     <center>
-        <ImageView fx:id="mainImage" fitHeight="476.0" fitWidth="773.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-            </image>
-            <viewport>
-                <Rectangle2D />
-            </viewport>
-        </ImageView>
+        <SplitPane>
+            <items>
+                <TreeView fx:id="albumTree" onMouseClicked="#treeViewOnClick"></TreeView>
+                <ImageViewPane>
+                    <imageView>
+                        <ImageView fx:id="mainImage" fitHeight="476.0" fitWidth="773.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                            </image>
+                            <viewport>
+                                <Rectangle2D />
+                            </viewport>
+                        </ImageView>
+                    </imageView>
+                </ImageViewPane>
+            </items>
+        </SplitPane>
     </center>
     <bottom>
         <HBox alignment="CENTER" spacing="10.0">

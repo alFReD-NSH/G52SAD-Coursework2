@@ -20,10 +20,16 @@ public class ImageFile extends File {
         if (image == null) {
             image = new Image("file:" + getAbsolutePath());
         }
+        if (isDirectory()) {
+            return null;
+        }
         return image;
     }
 
     public double getRatio() {
         return getImage().getHeight() / getImage().getWidth();
+    }
+    public String toString() {
+        return getName();
     }
 }

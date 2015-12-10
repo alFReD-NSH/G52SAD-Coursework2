@@ -55,6 +55,14 @@ public class FolderAlbum extends File {
         this.currentImage = currentImage;
     }
 
+    public void setCurrentImage(String currentImage) {
+        for (ImageFile image : images) {
+            if (image.getName() == currentImage) {
+                this.currentImage = image;
+            }
+        }
+    }
+
     public void removeImage(ImageFile image) {
         image.delete();
         images.remove(image);
