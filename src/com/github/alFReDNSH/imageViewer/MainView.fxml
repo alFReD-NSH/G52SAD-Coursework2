@@ -36,7 +36,13 @@
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
-            <items>
+                 <MenuItem mnemonicParsing="false" text="Open Album"
+                           onAction="#openAlbum">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP"
+                                            shift="UP" shortcut="UP"/>
+                    </accelerator>
+                </MenuItem>           <items>
                 <MenuItem mnemonicParsing="false" text="Add Image" onAction="#addButtonListener">
                     <accelerator>
                         <KeyCodeCombination alt="UP" code="I" control="DOWN" meta="UP"

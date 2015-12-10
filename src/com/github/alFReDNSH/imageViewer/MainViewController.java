@@ -1,12 +1,15 @@
 package com.github.alFReDNSH.imageViewer;
 
 import com.github.alFReDNSH.imageViewer.conflictDialog.ConflictDialog;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.nio.file.CopyOption;
@@ -27,7 +30,8 @@ public class MainViewController
 
     public void initialize()
     {
-        refreshImage();
+        // Because scene is not initialized yet completely.
+        Platform.runLater(() -> refreshImage());
     }
 
     public void previousButtonListener() {
@@ -86,8 +90,11 @@ public class MainViewController
     }
 
     private void refreshImage() {
-        mainImage.setImage(new Image("File:" + mainAlbum.getCurrentImage()
-                .getAbsolutePath()));
+        mainImage.setImage(mainAlbum.getCurrentImage().getImage());
+        if (mainImage.getScene()!= null) {
+            ((Stage)(mainImage.getScene().getWindow())).setTitle(
+                    mainAlbum.getCurrentImage().getName());
+        }
     }
 
     public void quit() {
@@ -100,5 +107,16 @@ public class MainViewController
         alert.setHeaderText("This was developed by Farid Nouri Neshat.");
         alert.setContentText("Version 0.1");
         alert.show();
+    }
+
+    public void openAlbum() {
+        DirectoryChooser directoryChooser = new DirectoryChooser();
+        directoryChooser.setTitle("Open the directory where you want it to be the album");
+        File file = directoryChooser.showDialog(mainImage.getScene().getWindow());
+        if (file == null) {
+            return;
+        }
+        mainAlbum = new FolderAlbum(file);
+        refreshImage();
     }
 }

@@ -12,6 +12,9 @@ public class FolderAlbum extends File {
         addImagesFromDirectory(this);
         currentImage = images.get(0);
     }
+    public FolderAlbum(File path) {
+        this(path.getAbsolutePath());
+    }
 
     private void addImagesFromDirectory(File dir) {
         File[] files = dir.listFiles();
