@@ -32,14 +32,14 @@ public class MainViewController
     @FXML
     private TreeView albumTree;
 
-    private FolderAlbum mainAlbum = new FolderAlbum(".");
+    private String currentFolder = System.getProperty("user.home") + "/Pictures";
+    private FolderAlbum mainAlbum = new FolderAlbum(currentFolder);
 
     public void initialize()
     {
         // Because scene is not initialized yet completely.
         Platform.runLater(() -> refreshImage());
-        albumTree.setRoot(createNode(new ImageFile(System.getProperty("user.home") +
-                "/Pictures")));
+        refreshTree();
     }
 
     public void previousButtonListener() {
@@ -84,6 +84,7 @@ public class MainViewController
                 Util.handleException(e, "copying the file");
             }
         }
+        refreshTree();
     }
 
     public void removeButtonListener() {
@@ -97,14 +98,19 @@ public class MainViewController
             mainAlbum.removeImage();
             refreshImage();
         }
+        refreshTree();
     }
 
     private void refreshImage() {
         mainImage.setImage(mainAlbum.getCurrentImage().getImage());
         if (mainImage.getScene()!= null) {
             ((Stage)(mainImage.getScene().getWindow())).setTitle(
-                    mainAlbum.getCurrentImage().getName());
+                    mainAlbum.getCurrentImage().getPath());
         }
+    }
+
+    private void refreshTree() {
+         albumTree.setRoot(createNode(new ImageFile(currentFolder)));
     }
 
     public void quit() {
@@ -127,10 +133,13 @@ public class MainViewController
             return;
         }
         mainAlbum = new FolderAlbum(file);
+        currentFolder = file.getAbsolutePath();
         refreshImage();
+        refreshTree();
     }
 
-
+    // The following methods are taken from here:
+    // http://docs.oracle.com/javafx/2/api/javafx/scene/control/TreeItem.html
     // This method creates a TreeItem to represent the given File. It does this
     // by overriding the TreeItem.getChildren() and TreeItem.isLeaf() methods
     // anonymously, but this could be better abstracted by creating a
