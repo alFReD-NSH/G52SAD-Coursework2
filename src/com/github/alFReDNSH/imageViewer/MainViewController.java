@@ -13,6 +13,7 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import javax.sound.midi.SysexMessage;
 import java.io.File;
 import java.nio.file.CopyOption;
 import java.nio.file.FileAlreadyExistsException;
@@ -52,6 +53,8 @@ public class MainViewController
 
     public void addButtonListener() {
         FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image " +
+                "files", "*.bmp", "*.gif", "*.jpeg", "*.jpg", "*.png"));
         fileChooser.setTitle("Open files to be copied to the album");
         List<File> files = fileChooser.showOpenMultipleDialog(mainImage.getScene()
                 .getWindow());
