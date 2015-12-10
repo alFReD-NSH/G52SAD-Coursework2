@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.input.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -10,10 +11,8 @@
 
 <BorderPane prefHeight="600.0" prefWidth="800.0" stylesheets="@MainView.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.alFReDNSH.imageViewer.MainViewController">
     <center>
-        <ImageView fx:id="mainImage" fitHeight="476.0" fitWidth="773.0" layoutX="92.0"
-                   layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="mainImage" fitHeight="476.0" fitWidth="773.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@cat.jpg" />
             </image>
             <viewport>
                 <Rectangle2D />
@@ -21,12 +20,16 @@
         </ImageView>
     </center>
     <bottom>
-        <HBox alignment="CENTER">
+        <HBox alignment="CENTER" spacing="10.0">
             <children>
+                <Button onAction="#removeButtonListener" text="X Remove Image from album" />
                 <Button onAction="#previousButtonListener" text="&lt;" />
                 <Button onAction="#nextButtonListener" text="&gt;" />
-                <Button text="+ Add Image to Album" onAction="#addButtonListener"/>
+                <Button onAction="#addButtonListener" text="+ Add Image to Album" />
             </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </BorderPane.margin>
         </HBox>
     </bottom>
 </BorderPane>

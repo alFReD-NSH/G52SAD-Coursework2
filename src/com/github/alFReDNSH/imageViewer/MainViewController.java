@@ -72,6 +72,19 @@ public class MainViewController
         }
     }
 
+    public void removeButtonListener() {
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Confirm Delete");
+        alert.setHeaderText("Are you sure you want to remove this file from the album?");
+        alert.setContentText("You cannot undo this action.");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            mainAlbum.removeImage();
+            refreshImage();
+        }
+    }
+
     private void refreshImage() {
         mainImage.setImage(new Image("File:" + mainAlbum.getCurrentImage()
                 .getAbsolutePath()));
